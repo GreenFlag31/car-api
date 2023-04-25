@@ -1,0 +1,1178 @@
+[
+  {
+    "make": "Chevrolet",
+    "model": "Bel Air",
+    "origin": "USA",
+    "year_of_production": 1957,
+    "version": "Convertible",
+    "body_style": {
+      "type": "convertible",
+      "number_of_doors": 2
+    },
+    "engine": {
+      "type": "V8",
+      "number_of_cylinders": 8,
+      "maximum_power": "245 hp",
+      "displacement": "4.6 L"
+    },
+    "transmission": {
+      "type": "manual",
+      "number_of_speeds": 3
+    },
+    "dimensions": {
+      "length": "5.01 m",
+      "width": "1.86 m",
+      "height": "1.47 m",
+      "wheelbase": "2.89 m"
+    },
+    "weight": "1,598 kg",
+    "top_speed": "170 km/h",
+    "acceleration": {
+      "0-100 km/h": "9.8 s",
+      "0-400 m": "16.6 s"
+    },
+    "fuel_consumption": {
+      "city": "21 L/100 km",
+      "highway": "14 L/100 km"
+    },
+    "price": "$2,900",
+    "description": "The Chevrolet Bel Air is a classic American car that was first introduced in 1950. The 1957 Bel Air Convertible was a popular model with its stylish design and powerful V8 engine, producing a maximum horsepower of 245. With its iconic tail fins and chrome accents, the Bel Air has become a symbol of the 1950s era in American automotive culture."
+  },
+  {
+    "make": "Jaguar",
+    "model": "XK120",
+    "origin": "GB",
+
+    "year_of_production": 1950,
+    "version": "Roadster",
+    "body_style": {
+      "type": "roadster",
+      "number_of_doors": 2
+    },
+    "engine": {
+      "type": "inline-6",
+      "number_of_cylinders": 6,
+      "maximum_power": "160 hp",
+      "displacement": "3.4 L"
+    },
+    "transmission": {
+      "type": "4-speed manual",
+      "number_of_speeds": 4
+    },
+    "dimensions": {
+      "length": "4.39 m",
+      "width": "1.58 m",
+      "height": "1.32 m",
+      "wheelbase": "2.59 m"
+    },
+    "weight": "1,040 kg",
+    "top_speed": "193 km/h",
+    "acceleration": {
+      "0-100 km/h": "10.0 s",
+      "0-400 m": "17.6 s"
+    },
+    "fuel_consumption": {
+      "city": "15 L/100 km",
+      "highway": "11 L/100 km"
+    },
+    "price": "$4,000",
+    "description": "The Jaguar XK120 Roadster is a classic British sports car that was produced from 1948 to 1954. It is powered by a 3.4L inline-6 engine that produces 160 horsepower, and features a 4-speed manual transmission. With its sleek design and impressive performance, the XK120 is a timeless classic that continues to be coveted by car enthusiasts around the world."
+  },
+  {
+    "make": "Fiat",
+    "model": "1100",
+    "origin": "Italy",
+    "year_of_production": 1954,
+    "version": "TV Trasformabile",
+    "body_style": {
+      "type": "convertible",
+      "number_of_doors": 2
+    },
+    "engine": {
+      "type": "4-cylinder",
+      "number_of_cylinders": 4,
+      "maximum_power": "51 hp",
+      "displacement": "1.1 L"
+    },
+    "transmission": {
+      "type": "4-speed manual",
+      "number_of_speeds": 4
+    },
+    "dimensions": {
+      "length": "3.89 m",
+      "width": "1.50 m",
+      "height": "1.34 m",
+      "wheelbase": "2.28 m"
+    },
+    "weight": "800 kg",
+    "top_speed": "140 km/h",
+    "acceleration": {
+      "0-100 km/h": "22 s",
+      "0-400 m": "20 s"
+    },
+    "fuel_consumption": {
+      "city": "11 L/100 km",
+      "highway": "8 L/100 km"
+    },
+    "price": "$3,500",
+    "description": "The Fiat 1100 TV Trasformabile is a stylish and sporty convertible produced in Italy in the 1950s. Its 4-cylinder engine produces 51 horsepower, making it one of the more powerful cars in its class. With its sleek design and comfortable interior, the 1100 TV Trasformabile is a great choice for those who want a classic Italian sports car with a little extra power."
+  },
+  {
+    "make": "Alfa Romeo",
+    "model": "1900C",
+    "origin": "Italy",
+    "year_of_production": 1951,
+    "version": "Super Sprint",
+    "body_style": {
+      "type": "coupe",
+      "number_of_doors": 2
+    },
+    "engine": {
+      "type": "inline-4",
+      "number_of_cylinders": 4,
+      "maximum_power": "115 hp",
+      "displacement": "1.9 L"
+    },
+    "transmission": {
+      "type": "4-speed manual",
+      "number_of_speeds": 4
+    },
+    "dimensions": {
+      "length": "4.12 m",
+      "width": "1.5 m",
+      "height": "1.4 m",
+      "wheelbase": "2.52 m"
+    },
+    "weight": "950 kg",
+    "top_speed": "190 km/h",
+    "acceleration": {
+      "0-100 km/h": "11 s",
+      "0-400 m": "17 s"
+    },
+    "fuel_consumption": {
+      "city": "13 L/100 km",
+      "highway": "8 L/100 km"
+    },
+    "price": "$15,000",
+    "description": "The Alfa Romeo 1900C Super Sprint is a classic Italian sports car that was first introduced in 1951. With a top speed of 190 km/h and a powerful 115 horsepower engine, the 1900C Super Sprint was a popular choice for racing enthusiasts in its day. The sleek and aerodynamic design of the car is a hallmark of Alfa Romeo's commitment to both performance and style."
+  },
+  {
+    "make": "Dodge",
+    "model": "Coronet",
+    "origin": "USA",
+    "year_of_production": 1955,
+    "version": "Custom Royal",
+    "body_style": {
+      "type": "sedan",
+      "number_of_doors": 4
+    },
+    "engine": {
+      "type": "V8 Hemi",
+      "number_of_cylinders": 8,
+      "maximum_power": "240 hp",
+      "displacement": "4.4 L"
+    },
+    "transmission": {
+      "type": "automatic",
+      "number_of_speeds": 3
+    },
+    "dimensions": {
+      "length": "5.2 m",
+      "width": "1.9 m",
+      "height": "1.5 m",
+      "wheelbase": "3 m"
+    },
+    "weight": "1,640 kg",
+    "top_speed": "170 km/h",
+    "acceleration": {
+      "0-100 km/h": "10.4 s",
+      "0-400 m": "17.5 s"
+    },
+    "fuel_consumption": {
+      "city": "20 L/100 km",
+      "highway": "15 L/100 km"
+    },
+    "price": "$2,700",
+    "description": "The Dodge Coronet Custom Royal was a popular full-size sedan in the mid-1950s. It was powered by a V8 Hemi engine that produced 240 horsepower, and was available with a three-speed automatic transmission. The car had a spacious and comfortable interior, and was known for its smooth and quiet ride. The 1955 model year was a significant one for the Coronet, as it was redesigned with a more modern and streamlined appearance."
+  },
+
+  {
+    "make": "Ford",
+    "model": "Mustang",
+    "origin": "USA",
+    "year_of_production": 1964,
+    "version": "GT",
+    "body_style": {
+      "type": "sports coupe",
+      "number_of_doors": 2
+    },
+    "engine": {
+      "type": "V8",
+      "number_of_cylinders": 8,
+      "maximum_power": "271 hp",
+      "displacement": "4.7 L"
+    },
+    "transmission": {
+      "type": "manual",
+      "number_of_speeds": 4
+    },
+    "dimensions": {
+      "length": "4.60 m",
+      "width": "1.74 m",
+      "height": "1.35 m",
+      "wheelbase": "2.74 m"
+    },
+    "weight": "1,340 kg",
+    "top_speed": "210 km/h",
+    "acceleration": {
+      "0-100 km/h": "7.2 s",
+      "0-400 m": "15.6 s"
+    },
+    "fuel_consumption": {
+      "city": "19 L/100 km",
+      "highway": "13 L/100 km"
+    },
+    "price": "$2,368",
+    "description": "The Ford Mustang is an American sports car that was first introduced in 1964. The 1964 Mustang GT was an instant classic with its sporty design and powerful V8 engine, producing a maximum horsepower of 271. The Mustang has since become a beloved icon of American automotive culture, with numerous iterations and improvements over the years."
+  },
+  {
+    "make": "Jaguar",
+    "model": "E-Type",
+    "origin": "GB",
+    "year_of_production": 1961,
+    "version": "Series 1",
+    "body_style": {
+      "type": "2-seater coupe",
+      "number_of_doors": 2
+    },
+    "engine": {
+      "type": "inline-6",
+      "number_of_cylinders": 6,
+      "maximum_power": "265 hp",
+      "displacement": "3.8 L"
+    },
+    "transmission": {
+      "type": "manual",
+      "number_of_speeds": 4
+    },
+    "dimensions": {
+      "length": "4.45 m",
+      "width": "1.66 m",
+      "height": "1.19 m",
+      "wheelbase": "2.44 m"
+    },
+    "weight": "1,040 kg",
+    "top_speed": "240 km/h",
+    "acceleration": {
+      "0-100 km/h": "6.5 s",
+      "0-400 m": "14.9 s"
+    },
+    "fuel_consumption": {
+      "city": "21 L/100 km",
+      "highway": "11 L/100 km"
+    },
+    "price": "$5,595",
+    "description": "The Jaguar E-Type Series 1 was a stunning sports car produced from 1961 to 1975. The 1961 version had a powerful 3.8-liter inline-6 engine that could produce up to 265 horsepower. The E-Type was praised for its sleek design and impressive performance, with a top speed of 240 km/h and acceleration from 0 to 100 km/h in just 6.5 seconds."
+  },
+  {
+    "make": "Ferrari",
+    "model": "250 GTO",
+    "origin": "Italy",
+    "year_of_production": 1962,
+    "version": "Series I",
+    "body_style": {
+      "type": "Berlinetta",
+      "number_of_doors": 2
+    },
+    "engine": {
+      "type": "V12",
+      "number_of_cylinders": 12,
+      "maximum_power": "300 hp",
+      "displacement": "3.0 L"
+    },
+    "transmission": {
+      "type": "manual",
+      "number_of_speeds": 5
+    },
+    "dimensions": {
+      "length": "4.40 m",
+      "width": "1.60 m",
+      "height": "1.20 m",
+      "wheelbase": "2.40 m"
+    },
+    "weight": "1,000 kg",
+    "top_speed": "280 km/h",
+    "acceleration": {
+      "0-100 km/h": "6.1 s",
+      "0-400 m": "14.0 s"
+    },
+    "fuel_consumption": {
+      "city": "28 L/100 km",
+      "highway": "16 L/100 km"
+    },
+    "price": "$18000",
+    "description": "The Ferrari 250 GTO is one of the most iconic sports cars ever produced. First introduced in 1962, it quickly became a legend thanks to its stunning design, powerful V12 engine, and impressive racing record. The 250 GTO is a true masterpiece of automotive engineering, with a top speed of 280 km/h and acceleration from 0 to 100 km/h in just 6.1 seconds. With only 39 units ever produced, the Ferrari 250 GTO is also one of the most sought-after and valuable cars in the world, with recent sales reaching up to $18 million."
+  },
+  {
+    "make": "Shelby",
+    "model": "Cobra",
+    "origin": "USA",
+    "year_of_production": 1965,
+    "version": "427",
+    "body_style": {
+      "type": "roadster",
+      "number_of_doors": 2
+    },
+    "engine": {
+      "type": "V8",
+      "number_of_cylinders": 8,
+      "maximum_power": "425 hp",
+      "displacement": "7.0 L"
+    },
+    "transmission": {
+      "type": "manual",
+      "number_of_speeds": 4
+    },
+    "dimensions": {
+      "length": "4.19 m",
+      "width": "1.63 m",
+      "height": "1.14 m",
+      "wheelbase": "2.36 m"
+    },
+    "weight": "1,080 kg",
+    "top_speed": "265 km/h",
+    "acceleration": {
+      "0-100 km/h": "4.2 s",
+      "0-400 m": "12.8 s"
+    },
+    "fuel_consumption": {
+      "city": "22 L/100 km",
+      "highway": "16 L/100 km"
+    },
+    "price": "$7,000",
+    "description": "The Shelby Cobra 427 is an iconic American roadster that was produced in the mid 1960s. This version of the Cobra was known for its powerful 7.0-liter V8 engine, which could produce up to 425 horsepower. The car's lightweight body and responsive handling made it a popular choice among racing enthusiasts. Despite its high performance, the Cobra was also known for its distinctive style and classic design, which have made it a sought-after collector's item in the decades since its production."
+  },
+  {
+    "make": "Mercedes-Benz",
+    "model": "300SL",
+    "origin": "Germany",
+    "year_of_production": 1963,
+    "version": "Gullwing",
+    "body_style": {
+      "type": "sports car",
+      "number_of_doors": 2
+    },
+    "engine": {
+      "type": "M198 inline-six",
+      "number_of_cylinders": 6,
+      "maximum_power": "240 hp",
+      "displacement": "2.9 L"
+    },
+    "transmission": {
+      "type": "4-speed manual",
+      "number_of_speeds": 4
+    },
+    "dimensions": {
+      "length": "4.53 m",
+      "width": "1.8 m",
+      "height": "1.3 m",
+      "wheelbase": "2.4 m"
+    },
+    "weight": "1,295 kg",
+    "top_speed": "257 km/h",
+    "acceleration": {
+      "0-100 km/h": "6.8 s",
+      "0-400 m": "14.9 s"
+    },
+    "fuel_consumption": {
+      "city": "17 L/100 km",
+      "highway": "10 L/100 km"
+    },
+    "price": "$7,500",
+    "description": "The Mercedes-Benz 300SL Gullwing is an iconic sports car that was produced from 1954 to 1963. The 1963 model is powered by a 2.9L M198 inline-six engine that produces 240 horsepower. Its sleek and aerodynamic design, coupled with advanced technology and engineering, make it a highly sought-after collector's car."
+  },
+
+  {
+    "make": "Ferrari",
+    "model": "Dino 246 GT",
+    "origin": "Italy",
+    "year_of_production": 1972,
+    "version": "GT",
+    "body_style": {
+      "type": "sports car",
+      "number_of_doors": 2
+    },
+    "engine": {
+      "type": "V6",
+      "number_of_cylinders": 6,
+      "maximum_power": "195 hp",
+      "displacement": "2.4 L"
+    },
+    "transmission": {
+      "type": "5-speed manual",
+      "number_of_speeds": 5
+    },
+    "dimensions": {
+      "length": "4.23 m",
+      "width": "1.66 m",
+      "height": "1.16 m",
+      "wheelbase": "2.35 m"
+    },
+    "weight": "1,080 kg",
+    "top_speed": "240 km/h",
+    "acceleration": {
+      "0-100 km/h": "7.3 s",
+      "0-400 m": "15.5 s"
+    },
+    "fuel_consumption": {
+      "city": "18 L/100 km",
+      "highway": "12 L/100 km"
+    },
+    "price": "$15,000",
+    "description": "The Ferrari Dino 246 GT is a mid-engine sports car produced by Ferrari from 1969 to 1974. The 1972 model is powered by a 2.4L V6 engine that produces 195 horsepower. Its sleek and aerodynamic design, coupled with advanced technology and engineering, make it a highly sought-after collector's car."
+  },
+  {
+    "make": "Porsche",
+    "model": "911",
+    "origin": "Germany",
+    "year_of_production": 1973,
+    "version": "Carrera RS",
+    "body_style": {
+      "type": "sports car",
+      "number_of_doors": 2
+    },
+    "engine": {
+      "type": "MFI flat-six",
+      "number_of_cylinders": 6,
+      "maximum_power": "210 hp",
+      "displacement": "2.7 L"
+    },
+    "transmission": {
+      "type": "5-speed manual",
+      "number_of_speeds": 5
+    },
+    "dimensions": {
+      "length": "4.29 m",
+      "width": "1.61 m",
+      "height": "1.32 m",
+      "wheelbase": "2.27 m"
+    },
+    "weight": "975 kg",
+    "top_speed": "240 km/h",
+    "acceleration": {
+      "0-100 km/h": "5.8 s",
+      "0-400 m": "13.9 s"
+    },
+    "fuel_consumption": {
+      "city": "14 L/100 km",
+      "highway": "9 L/100 km"
+    },
+    "price": "$35,000",
+    "description": "The Porsche 911 Carrera RS is a classic sports car produced by Porsche in the 1970s. The 1973 model is powered by a 2.7L MFI flat-six engine that produces 210 horsepower. It features a lightweight body and a powerful engine, making it a popular choice among car enthusiasts and collectors."
+  },
+  {
+    "make": "Chevrolet",
+    "model": "Chevelle SS",
+    "origin": "USA",
+    "year_of_production": 1970,
+    "version": "Chevelle SS 454",
+    "body_style": {
+      "type": "muscle car",
+      "number_of_doors": 2
+    },
+    "engine": {
+      "type": "V8",
+      "number_of_cylinders": 8,
+      "maximum_power": "450 hp",
+      "displacement": "7.4 L"
+    },
+    "transmission": {
+      "type": "4-speed manual",
+      "number_of_speeds": 4
+    },
+    "dimensions": {
+      "length": "5.32 m",
+      "width": "1.92 m",
+      "height": "1.3 m",
+      "wheelbase": "2.94 m"
+    },
+    "weight": "1,680 kg",
+    "top_speed": "225 km/h",
+    "acceleration": {
+      "0-100 km/h": "5.8 s",
+      "0-400 m": "13.9 s"
+    },
+    "fuel_consumption": {
+      "city": "25 L/100 km",
+      "highway": "16 L/100 km"
+    },
+    "price": "$4,500",
+    "description": "The Chevrolet Chevelle SS is a classic muscle car produced by Chevrolet from 1964 to 1973. The 1970 model is powered by a 7.4L V8 engine that produces 450 horsepower. Its iconic design and powerful engine make it a highly sought-after collector's car."
+  },
+  {
+    "make": "BMW",
+    "model": "2002 Turbo",
+    "origin": "Germany",
+    "year_of_production": 1973,
+    "version": "Turbo",
+    "body_style": {
+      "type": "sports sedan",
+      "number_of_doors": 2
+    },
+    "engine": {
+      "type": "M10 turbocharged inline-four",
+      "number_of_cylinders": 4,
+      "maximum_power": "170 hp",
+      "displacement": "2.0 L"
+    },
+    "transmission": {
+      "type": "4-speed manual",
+      "number_of_speeds": 4
+    },
+    "dimensions": {
+      "length": "4.35 m",
+      "width": "1.58 m",
+      "height": "1.38 m",
+      "wheelbase": "2.47 m"
+    },
+    "weight": "1,130 kg",
+    "top_speed": "211 km/h",
+    "acceleration": {
+      "0-100 km/h": "6.9 s",
+      "0-400 m": "15.4 s"
+    },
+    "fuel_consumption": {
+      "city": "12 L/100 km",
+      "highway": "8 L/100 km"
+    },
+    "price": "$6,990",
+    "description": "The BMW 2002 Turbo is a classic sports sedan that was produced from 1973 to 1975. Its turbocharged M10 inline-four engine produces 170 horsepower, and the car is capable of reaching a top speed of 211 km/h. Its nimble handling, responsive steering, and sleek design make it a highly sought-after collector's car."
+  },
+  {
+    "make": "Alfa Romeo",
+    "model": "Spider 2000 Veloce",
+    "origin": "Italy",
+    "year_of_production": 1972,
+    "version": "Series 2",
+    "body_style": {
+      "type": "convertible",
+      "number_of_doors": 2
+    },
+    "engine": {
+      "type": "DOHC inline-four",
+      "number_of_cylinders": 4,
+      "maximum_power": "132 hp",
+      "displacement": "2.0 L"
+    },
+    "transmission": {
+      "type": "5-speed manual",
+      "number_of_speeds": 5
+    },
+    "dimensions": {
+      "length": "4.15 m",
+      "width": "1.62 m",
+      "height": "1.28 m",
+      "wheelbase": "2.25 m"
+    },
+    "weight": "1,078 kg",
+    "top_speed": "190 km/h",
+    "acceleration": {
+      "0-100 km/h": "9.2 s",
+      "0-400 m": "16.8 s"
+    },
+    "fuel_consumption": {
+      "city": "13 L/100 km",
+      "highway": "9 L/100 km"
+    },
+    "price": "$6,500",
+    "description": "The Alfa Romeo Spider 2000 Veloce is a stylish convertible sports car that was produced from 1966 to 1994. The 1972 Series 2 model is powered by a 2.0L DOHC inline-four engine that produces 132 horsepower. Its sleek design, nimble handling, and classic Italian engineering make it a highly desirable classic car."
+  },
+
+  {
+    "make": "Porsche",
+    "model": "911",
+    "origin": "Germany",
+    "year_of_production": 1987,
+    "version": "Carrera",
+    "body_style": {
+      "type": "coupe",
+      "number_of_doors": 2
+    },
+    "engine": {
+      "type": "M930/20 flat-six",
+      "number_of_cylinders": 6,
+      "maximum_power": "217 hp",
+      "displacement": "3.2 L"
+    },
+    "transmission": {
+      "type": "5-speed manual",
+      "number_of_speeds": 5
+    },
+    "dimensions": {
+      "length": "4.275 m",
+      "width": "1.65 m",
+      "height": "1.3 m",
+      "wheelbase": "2.27 m"
+    },
+    "weight": "1,190 kg",
+    "top_speed": "245 km/h",
+    "acceleration": {
+      "0-100 km/h": "5.6 s",
+      "0-400 m": "13.9 s"
+    },
+    "fuel_consumption": {
+      "city": "14 L/100 km",
+      "highway": "9 L/100 km"
+    },
+    "price": "$50,000",
+    "description": "The Porsche 911 Carrera is a high-performance sports car that was produced from 1984 to 1989. The 1987 model is powered by a 3.2L M930/20 flat-six engine that produces 217 horsepower. Its timeless design, coupled with advanced technology and engineering, make it a highly desirable collector's car."
+  },
+  {
+    "make": "DeLorean",
+    "model": "DMC-12",
+    "origin": "France",
+    "year_of_production": 1981,
+    "version": "Stainless Steel",
+    "body_style": {
+      "type": "coupe",
+      "number_of_doors": 2
+    },
+    "engine": {
+      "type": "PRV engine",
+      "number_of_cylinders": 6,
+      "maximum_power": "130 hp",
+      "displacement": "2.8 L"
+    },
+    "transmission": {
+      "type": "5-speed manual",
+      "number_of_speeds": 5
+    },
+    "dimensions": {
+      "length": "4.23 m",
+      "width": "1.85 m",
+      "height": "1.14 m",
+      "wheelbase": "2.40 m"
+    },
+    "weight": "1,230 kg",
+    "top_speed": "177 km/h",
+    "acceleration": {
+      "0-100 km/h": "8.8 s",
+      "0-400 m": "16.4 s"
+    },
+    "fuel_consumption": {
+      "city": "16.8 L/100 km",
+      "highway": "12.4 L/100 km"
+    },
+    "price": "$25,000",
+    "description": "The DeLorean DMC-12 is a unique sports car that was produced for only two years, from 1981 to 1983. Its most distinctive feature is the stainless steel body, but it also boasts gull-wing doors and a rear-mounted PRV engine. Despite its short production run, the DMC-12 has achieved cult status and is famous for its appearance in the 'Back to the Future' movies."
+  },
+  {
+    "make": "Lancia",
+    "model": "Delta Integrale",
+    "origin": "Italy",
+    "year_of_production": 1988,
+    "version": "HF 16V",
+    "body_style": {
+      "type": "hatchback",
+      "number_of_doors": 5
+    },
+    "engine": {
+      "type": "inline-four",
+      "number_of_cylinders": 4,
+      "maximum_power": "200 hp",
+      "displacement": "2.0 L"
+    },
+    "transmission": {
+      "type": "5-speed manual",
+      "number_of_speeds": 5
+    },
+    "dimensions": {
+      "length": "3.95 m",
+      "width": "1.70 m",
+      "height": "1.36 m",
+      "wheelbase": "2.54 m"
+    },
+    "weight": "1,230 kg",
+    "top_speed": "220 km/h",
+    "acceleration": {
+      "0-100 km/h": "6.6 s",
+      "0-400 m": "14.8 s"
+    },
+    "fuel_consumption": {
+      "city": "12.3 L/100 km",
+      "highway": "8.1 L/100 km"
+    },
+    "price": "$20,000",
+    "description": "The Lancia Delta Integrale HF 16V is a rare and highly sought-after car that was produced from 1988 to 1993. It is powered by a 2.0L inline-four engine that produces 200 horsepower and has a top speed of 220 km/h. Its advanced four-wheel drive system, coupled with its lightweight construction and superior handling, make it a favorite among rally enthusiasts."
+  },
+  {
+    "make": "Honda",
+    "model": "Prelude",
+    "origin": "Japan",
+    "year_of_production": 1983,
+    "version": "2.0 EX",
+    "body_style": {
+      "type": "coupe",
+      "number_of_doors": 2
+    },
+    "engine": {
+      "type": "EF",
+      "number_of_cylinders": 4,
+      "maximum_power": "110 hp",
+      "displacement": "2.0 L"
+    },
+    "transmission": {
+      "type": "5-speed manual",
+      "number_of_speeds": 5
+    },
+    "dimensions": {
+      "length": "4.26 m",
+      "width": "1.66 m",
+      "height": "1.31 m",
+      "wheelbase": "2.39 m"
+    },
+    "weight": "1,010 kg",
+    "top_speed": "190 km/h",
+    "acceleration": {
+      "0-100 km/h": "9.5 s",
+      "0-400 m": "17.3 s"
+    },
+    "fuel_consumption": {
+      "city": "9.3 L/100 km",
+      "highway": "6.8 L/100 km"
+    },
+    "price": "$10,000",
+    "description": "The 1983 Honda Prelude 2.0 EX is a sporty coupe that combines performance and reliability. Its 2.0L EF engine produces 110 horsepower and is mated to a 5-speed manual transmission. The car's lightweight body and agile handling make it a fun car to drive, while its comfortable interior and fuel efficiency make it a practical choice for everyday use."
+  },
+  {
+    "make": "Audi",
+    "model": "Quattro",
+    "origin": "Germany",
+    "year_of_production": 1985,
+    "version": "Sport",
+    "body_style": {
+      "type": "coupe",
+      "number_of_doors": 2
+    },
+    "engine": {
+      "type": "turbocharged inline-five",
+      "number_of_cylinders": 5,
+      "maximum_power": "200 hp",
+      "displacement": "2.2 L"
+    },
+    "transmission": {
+      "type": "5-speed manual",
+      "number_of_speeds": 5
+    },
+    "dimensions": {
+      "length": "4.38 m",
+      "width": "1.72 m",
+      "height": "1.34 m",
+      "wheelbase": "2.22 m"
+    },
+    "weight": "1,310 kg",
+    "top_speed": "220 km/h",
+    "acceleration": {
+      "0-100 km/h": "7.1 s",
+      "0-400 m": "12.5 s"
+    },
+    "fuel_consumption": {
+      "city": "12 L/100 km",
+      "highway": "8 L/100 km"
+    },
+    "price": "$35,000",
+    "description": "The Audi Quattro Sport is a high-performance sports coupe that was produced from 1984 to 1986. The 1985 model is powered by a turbocharged inline-five engine that produces 200 horsepower. Its signature all-wheel drive system and rally-inspired design make it a beloved and iconic car among enthusiasts."
+  },
+
+  {
+    "make": "Toyota",
+    "model": "Supra",
+    "origin": "Japan",
+    "year_of_production": 1998,
+    "version": "2JZ-GTE",
+    "body_style": {
+      "type": "coupe",
+      "number_of_doors": 2
+    },
+    "engine": {
+      "type": "2JZ-GTE twin-turbo inline-six",
+      "number_of_cylinders": 6,
+      "maximum_power": "320 hp",
+      "displacement": "3.0 L"
+    },
+    "transmission": {
+      "type": "6-speed manual",
+      "number_of_speeds": 6
+    },
+    "dimensions": {
+      "length": "4.51 m",
+      "width": "1.81 m",
+      "height": "1.27 m",
+      "wheelbase": "2.57 m"
+    },
+    "weight": "1,580 kg",
+    "top_speed": "250 km/h",
+    "acceleration": {
+      "0-100 km/h": "5.5 s",
+      "0-400 m": "13.8 s"
+    },
+    "fuel_consumption": {
+      "city": "14 L/100 km",
+      "highway": "10 L/100 km"
+    },
+    "price": "$40,000",
+    "description": "The Toyota Supra is a classic sports car from the 90s that is still highly sought-after today. The 1998 model is powered by a 3.0L 2JZ-GTE twin-turbo inline-six engine that produces 320 horsepower. It features a sleek and aerodynamic design, and its advanced technology and engineering make it a true driver's car."
+  },
+  {
+    "make": "Mazda",
+    "model": "RX-7",
+    "origin": "Japan",
+    "year_of_production": 1995,
+    "version": "FD",
+    "body_style": {
+      "type": "sports car",
+      "number_of_doors": 2
+    },
+    "engine": {
+      "type": "13B-REW twin-turbo rotary",
+      "number_of_cylinders": 2,
+      "maximum_power": "276 hp",
+      "displacement": "1.3 L"
+    },
+    "transmission": {
+      "type": "5-speed manual",
+      "number_of_speeds": 5
+    },
+    "dimensions": {
+      "length": "4.24 m",
+      "width": "1.75 m",
+      "height": "1.23 m",
+      "wheelbase": "2.43 m"
+    },
+    "weight": "1,290 kg",
+    "top_speed": "250 km/h",
+    "acceleration": {
+      "0-100 km/h": "5.3 s",
+      "0-400 m": "13.6 s"
+    },
+    "fuel_consumption": {
+      "city": "14 L/100 km",
+      "highway": "9 L/100 km"
+    },
+    "price": "$35,000",
+    "description": "The Mazda RX-7 is a legendary sports car that was produced from 1978 to 2002. The 1995 model is powered by a 1.3L 13B-REW twin-turbo rotary engine that produces 276 horsepower. Its unique rotary engine, sleek design, and exceptional handling make it a favorite among driving enthusiasts."
+  },
+  {
+    "make": "Mitsubishi",
+    "model": "3000GT",
+    "origin": "Japan",
+    "year_of_production": 1994,
+    "version": "VR-4",
+    "body_style": {
+      "type": "sports car",
+      "number_of_doors": 2
+    },
+    "engine": {
+      "type": "3.0 L 6G72 V6",
+      "number_of_cylinders": 6,
+      "maximum_power": "222 hp",
+      "displacement": "3.0 L"
+    },
+    "transmission": {
+      "type": "5-speed manual",
+      "number_of_speeds": 5
+    },
+    "dimensions": {
+      "length": "4.5 m",
+      "width": "1.9 m",
+      "height": "1.3 m",
+      "wheelbase": "2.5 m"
+    },
+    "weight": "1,650 kg",
+    "top_speed": "250 km/h",
+    "acceleration": {
+      "0-100 km/h": "6.5 s",
+      "0-400 m": "14.9 s"
+    },
+    "fuel_consumption": {
+      "city": "13.4 L/100 km",
+      "highway": "9.0 L/100 km"
+    },
+    "price": "$45,000",
+    "description": "The 1994 Mitsubishi 3000GT is a sporty and stylish 2-door sports car. It's powered by a 3.0L V6 engine that produces 222 horsepower and can reach a top speed of 250 km/h. The car has a sleek and aerodynamic design, with advanced features such as all-wheel drive and four-wheel steering. It's a highly sought-after collector's car for those who appreciate the unique blend of performance and style that it offers."
+  },
+  {
+    "make": "Alfa Romeo",
+    "model": "155 Q4",
+    "origin": "Italy",
+    "year_of_production": 1992,
+    "version": "Quadrifoglio 4",
+    "body_style": {
+      "type": "sedan",
+      "number_of_doors": 4
+    },
+    "engine": {
+      "type": "2.0L turbocharged inline-four",
+      "number_of_cylinders": 4,
+      "maximum_power": "200 hp",
+      "displacement": "1,995 cc"
+    },
+    "transmission": {
+      "type": "5-speed manual",
+      "number_of_speeds": 5
+    },
+    "dimensions": {
+      "length": "4.27 m",
+      "width": "1.74 m",
+      "height": "1.41 m",
+      "wheelbase": "2.55 m"
+    },
+    "weight": "1,350 kg",
+    "top_speed": "240 km/h",
+    "acceleration": {
+      "0-100 km/h": "6.3 s",
+      "0-400 m": "14.7 s"
+    },
+    "fuel_consumption": {
+      "city": "11.3 L/100 km",
+      "highway": "7.4 L/100 km"
+    },
+    "price": "$26,000",
+    "description": "The Alfa Romeo 155 Q4 is a high-performance sedan produced by the Italian manufacturer from 1992 to 1997. The 1992 model is powered by a 2.0L turbocharged inline-four engine that produces 200 horsepower. Its sporty design and all-wheel-drive system make it a popular choice among car enthusiasts."
+  },
+  {
+    "make": "Venturi",
+    "model": "Atlantique",
+    "origin": "France",
+    "year_of_production": 1991,
+    "version": "N/A",
+    "body_style": {
+      "type": "sports car",
+      "number_of_doors": 2
+    },
+    "engine": {
+      "type": "PRV 3.0L V6",
+      "number_of_cylinders": 6,
+      "maximum_power": "260 hp",
+      "displacement": "2.9 L"
+    },
+    "transmission": {
+      "type": "5-speed manual",
+      "number_of_speeds": 5
+    },
+    "dimensions": {
+      "length": "4.3 m",
+      "width": "1.9 m",
+      "height": "1.2 m",
+      "wheelbase": "2.6 m"
+    },
+    "weight": "1,360 kg",
+    "top_speed": "275 km/h",
+    "acceleration": {
+      "0-100 km/h": "5.0 s",
+      "0-400 m": "13.2 s"
+    },
+    "fuel_consumption": {
+      "city": "19 L/100 km",
+      "highway": "11 L/100 km"
+    },
+    "price": "$80,000",
+    "description": "The Venturi Atlantique is a rare and exotic sports car that was produced in France from 1991 to 1996. Its sleek and aerodynamic design, combined with a powerful PRV 3.0L V6 engine producing 260 horsepower, makes it a highly sought-after collector's car. The Atlantique has a top speed of 275 km/h and can accelerate from 0 to 100 km/h in just 5.0 seconds."
+  },
+
+  {
+    "make": "Audi",
+    "model": "R8",
+    "origin": "Germany",
+    "year_of_production": 2008,
+    "version": "4.2 FSI quattro",
+    "body_style": {
+      "type": "sports car",
+      "number_of_doors": 2
+    },
+    "engine": {
+      "type": "V8",
+      "number_of_cylinders": 8,
+      "maximum_power": "420 hp",
+      "displacement": "4.2 L"
+    },
+    "transmission": {
+      "type": "6-speed manual",
+      "number_of_speeds": 6
+    },
+    "dimensions": {
+      "length": "4.43 m",
+      "width": "1.9 m",
+      "height": "1.24 m",
+      "wheelbase": "2.65 m"
+    },
+    "weight": "1,560 kg",
+    "top_speed": "301 km/h",
+    "acceleration": {
+      "0-100 km/h": "4.6 s",
+      "0-400 m": "12.6 s"
+    },
+    "fuel_consumption": {
+      "city": "15 L/100 km",
+      "highway": "9 L/100 km"
+    },
+    "price": "$110,000",
+    "description": "The Audi R8 is a mid-engine sports car that was introduced in 2006. The 2008 model features a 4.2L V8 engine that produces 420 horsepower and is paired with a 6-speed manual transmission. Its sleek and modern design, coupled with advanced technology and engineering, make it a highly sought-after sports car."
+  },
+  {
+    "make": "Maserati",
+    "model": "GranTurismo",
+    "origin": "Italy",
+    "year_of_production": 2007,
+    "version": "S",
+    "body_style": {
+      "type": "coupe",
+      "number_of_doors": 2
+    },
+    "engine": {
+      "type": "V8",
+      "number_of_cylinders": 8,
+      "maximum_power": "405 hp",
+      "displacement": "4.2 L"
+    },
+    "transmission": {
+      "type": "6-speed automatic",
+      "number_of_speeds": 6
+    },
+    "dimensions": {
+      "length": "4.88 m",
+      "width": "1.84 m",
+      "height": "1.35 m",
+      "wheelbase": "2.94 m"
+    },
+    "weight": "1,880 kg",
+    "top_speed": "285 km/h",
+    "acceleration": {
+      "0-100 km/h": "5.2 s",
+      "0-400 m": "13.3 s"
+    },
+    "fuel_consumption": {
+      "city": "22 L/100 km",
+      "highway": "12 L/100 km"
+    },
+    "price": "$120,000",
+    "description": "The Maserati GranTurismo is a high-performance luxury coupe that was first introduced in 2007. Its V8 engine produces 405 horsepower and is paired with a 6-speed automatic transmission. The car's sleek and aerodynamic design, combined with advanced technology and engineering, make it a highly sought-after luxury sports car."
+  },
+  {
+    "make": "Volvo",
+    "model": "S60",
+    "origin": "Sweden",
+    "year_of_production": 2002,
+    "version": "T5",
+    "body_style": {
+      "type": "sedan",
+      "number_of_doors": 4
+    },
+    "engine": {
+      "type": "B5234T3 inline-five",
+      "number_of_cylinders": 5,
+      "maximum_power": "247 hp",
+      "displacement": "2.3 L"
+    },
+    "transmission": {
+      "type": "5-speed manual",
+      "number_of_speeds": 5
+    },
+    "dimensions": {
+      "length": "4.6 m",
+      "width": "1.8 m",
+      "height": "1.4 m",
+      "wheelbase": "2.7 m"
+    },
+    "weight": "1,500 kg",
+    "top_speed": "250 km/h",
+    "acceleration": {
+      "0-100 km/h": "6.5 s",
+      "0-400 m": "14.9 s"
+    },
+    "fuel_consumption": {
+      "city": "11 L/100 km",
+      "highway": "7 L/100 km"
+    },
+    "price": "$35,000",
+    "description": "The Volvo S60 T5 is a sporty and stylish sedan that combines Scandinavian design with performance. The 2002 model is powered by a 2.3L B5234T3 inline-five engine that produces 247 horsepower. With its advanced safety features and comfortable interior, the S60 is a great choice for those who value both performance and practicality."
+  },
+  {
+    "make": "Chevrolet",
+    "model": "Corvette",
+    "origin": "USA",
+    "year_of_production": 2005,
+    "version": "C6 Z06",
+    "body_style": {
+      "type": "sports car",
+      "number_of_doors": 2
+    },
+    "engine": {
+      "type": "LS7 V8",
+      "number_of_cylinders": 8,
+      "maximum_power": "505 hp",
+      "displacement": "7.0 L"
+    },
+    "transmission": {
+      "type": "6-speed manual",
+      "number_of_speeds": 6
+    },
+    "dimensions": {
+      "length": "4.43 m",
+      "width": "1.85 m",
+      "height": "1.24 m",
+      "wheelbase": "2.62 m"
+    },
+    "weight": "1,400 kg",
+    "top_speed": "320 km/h",
+    "acceleration": {
+      "0-100 km/h": "3.9 s",
+      "0-400 m": "11.9 s"
+    },
+    "fuel_consumption": {
+      "city": "16.8 L/100 km",
+      "highway": "9.4 L/100 km"
+    },
+    "price": "$65,000",
+    "description": "The Chevrolet Corvette C6 Z06 is a high-performance sports car that was produced from 2005 to 2013. The 2005 model is powered by a 7.0L LS7 V8 engine that produces 505 horsepower. Its lightweight body and powerful engine allow it to achieve impressive speed and acceleration, making it a popular choice among car enthusiasts and racing enthusiasts alike."
+  },
+  {
+    "make": "Dodge",
+    "model": "Viper",
+    "origin": "USA",
+    "year_of_production": 2003,
+    "version": "SRT-10",
+    "body_style": {
+      "type": "sports car",
+      "number_of_doors": 2
+    },
+    "engine": {
+      "type": "V10",
+      "number_of_cylinders": 10,
+      "maximum_power": "500 hp",
+      "displacement": "8.3 L"
+    },
+    "transmission": {
+      "type": "6-speed manual",
+      "number_of_speeds": 6
+    },
+    "dimensions": {
+      "length": "4.45 m",
+      "width": "1.92 m",
+      "height": "1.22 m",
+      "wheelbase": "2.51 m"
+    },
+    "weight": "1,540 kg",
+    "top_speed": "305 km/h",
+    "acceleration": {
+      "0-100 km/h": "3.9 s",
+      "0-400 m": "11.9 s"
+    },
+    "fuel_consumption": {
+      "city": "22 L/100 km",
+      "highway": "12 L/100 km"
+    },
+    "price": "$85,000",
+    "description": "The 2003 Dodge Viper SRT-10 is a high-performance sports car with a V10 engine producing 500 horsepower. Its sleek design and powerful engine make it a popular choice for car enthusiasts who want a fast and exciting driving experience. With a top speed of 305 km/h and an acceleration of 0-100 km/h in just 3.9 seconds, the Viper SRT-10 is a true American icon."
+  }
+]
