@@ -28,25 +28,40 @@ carsRouter.get('/make/:make', async (req, res) => {
   res.send(allCars.length.toString());
 });
 
-carsRouter.get('/year_of_production/:year', async (req, res) => {
-  // Search by decade : 50, 60, 70, ...
-  if (req.params.year < 1950 || isNaN(req.params.year)) {
+carsRouter.get('/year_of_production', async (req, res) => {
+  // Search between two provided years
+  // Ex /year_of_production?year_min=1950&year_max=1960&sort=asc
+  if (req.query.year_min < 1950 || isNaN(req.query.year_min)) {
     return res.status(400).send({
       error: 'Invalid year',
-      message: 'Data available from year 1950 to 2010',
+      message: 'Data is available from year 1950 to 2010',
     });
   }
 
-  const allCars = await Car.find(
+  if (req.query.year_max <= req.query.year_min || isNaN(req.query.year_max)) {
+    req.query.year_max = Math.floor(req.params.year / 10 + 1) * 10;
+  }
+
+  if (
+    (req.query.order && !['asc', 'desc'].includes(req.query.order.toLowerCase())) ||
+    req.query.order?.toLowerCase() === 'asc'
+  ) {
+    req.query.order = 1;
+  } else if (req.query.order?.toLowerCase() === 'desc') {
+    req.query.order = -1;
+  }
+  console.log(req.query.order);
+
+  const carsSpecificYProduction = await Car.find(
     {
       year_of_production: {
-        $gte: req.params.year,
-        $lt: Math.floor(req.params.year / 10 + 1) * 10,
+        $gte: req.query.year_min,
+        $lt: req.query.year_max,
       },
     },
     { _id: 0, __v: 0 }
-  );
-  res.send(allCars.length.toString());
+  ).sort(req.query.order ? { year_of_production: req.query.order } : {});
+  res.send(carsSpecificYProduction);
 });
 
 carsRouter.get('/engine/:power', async (req, res) => {
@@ -60,17 +75,39 @@ carsRouter.get('/engine/:power', async (req, res) => {
 
   console.log(req.params.power);
   console.log(Math.floor(req.params.power / 100 + 1) * 100);
-  const allCars = await Car.find(
+  const carsSpecificPower = await Car.find(
     {
-      'engine.maximum_power': {
+      'engine.maximum_power_hp': {
         $gte: req.params.power,
         $lt: Math.floor(req.params.power / 100 + 1) * 100,
       },
     },
     { _id: 0, __v: 0 }
   );
-  console.log(allCars.length);
-  res.send(allCars);
+  console.log(carsSpecificPower.length);
+  res.send(carsSpecificPower);
+});
+
+carsRouter.get('/weight/:kg', async (req, res) => {
+  // search gte specific Kg
+  if (req.params.kg < 0 || isNaN(req.params.kg)) {
+    return res.status(400).send({
+      error: 'Invalid number',
+      message: 'Weight in kg must be a number greater or equal than 0',
+    });
+  }
+
+  console.log(req.params.kg);
+  const carsSpecifWeight = await Car.find(
+    {
+      weight_kg: {
+        $gte: req.params.kg,
+      },
+    },
+    { _id: 0, __v: 0 }
+  );
+  console.log(carsSpecifWeight.length);
+  res.send(carsSpecifWeight);
 });
 
 carsRouter.use((req, res, next) => {

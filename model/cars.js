@@ -13,7 +13,7 @@ const carSchema = new mongoose.Schema({
   engine: {
     type: { type: String, required: true },
     number_of_cylinders: { type: Number, required: true },
-    maximum_power: { type: Number, required: true },
+    maximum_power_hp: { type: Number, required: true },
     displacement: { type: String, required: true },
   },
   transmission: {
@@ -26,8 +26,8 @@ const carSchema = new mongoose.Schema({
     height: { type: String, required: true },
     wheelbase: { type: String, required: true },
   },
-  weight: { type: String, required: true },
-  top_speed: { type: String, required: true },
+  weight_kg: { type: Number, required: true },
+  top_speed_kmh: { type: Number, required: true },
   acceleration: {
     '0-100 km/h': { type: String, required: true },
     '0-400 m': { type: String, required: true },
