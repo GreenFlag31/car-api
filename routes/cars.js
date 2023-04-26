@@ -173,6 +173,46 @@ carsRouter.get('/weight', async (req, res) => {
   res.send(carsSpecifWeight);
 });
 
+import { User } from '../model/user.js';
+const LIMIT_QUERIES = 100;
+
+carsRouter.get('/updateCounterTest/:clientID', async (req, res) => {
+  const user = await User.findById(req.params.clientID);
+  const dateInDataBase = user.queries.dateNow;
+  let addingOneMonthTodateInDataBase = dateInDataBase.setMonth(dateInDataBase.getMonth() + 1);
+
+  // const currentDateOfQuery = Date.now();
+  const currentDateOfQuery = Date.parse('December 17, 2023 03:24:00');
+  console.log('counter in DB:', user.queries.counter);
+
+  // In the interval of time of one month
+  if (currentDateOfQuery < addingOneMonthTodateInDataBase && user.queries.counter < LIMIT_QUERIES) {
+    try {
+      const incrementCounter = await User.updateOne(
+        { _id: user._id },
+        { $inc: { 'queries.counter': 1 } }
+      );
+      return res.status(200).send(incrementCounter);
+    } catch (error) {
+      return res.status(500).send(error);
+    }
+  } else if (user.queries.counter >= LIMIT_QUERIES) {
+    res.status(400).send({ error: 'Quota exhausted', message: 'Your quota limit is reached' });
+  } else {
+    while (currentDateOfQuery >= addingOneMonthTodateInDataBase + 1) {
+      addingOneMonthTodateInDataBase = dateInDataBase.setMonth(dateInDataBase.getMonth() + 1);
+    }
+
+    console.log(new Date(addingOneMonthTodateInDataBase));
+    const timeStampToIsoString = new Date(addingOneMonthTodateInDataBase).toISOString();
+    const incrementDateResetCounter = await User.updateOne(
+      { _id: user._id },
+      { $set: { 'queries.dateNow': timeStampToIsoString, 'queries.counter': 0 } }
+    );
+    return res.status(200).send(incrementDateResetCounter);
+  }
+});
+
 carsRouter.use((req, res, next) => {
   res.status(404).json({ error: 'Invalid endpoint' });
 });

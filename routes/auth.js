@@ -3,7 +3,6 @@ import { User } from '../model/user.js';
 import { registerValidation, loginValidation } from '../validation.js';
 import bcrypt from 'bcrypt';
 import crypto from 'crypto';
-// import Jwt from 'jsonwebtoken';
 
 const authRouter = express.Router();
 
@@ -14,7 +13,7 @@ authRouter.post('/register', async (req, res) => {
   const emailExist = await User.findOne({ email: req.body.email });
   if (emailExist) return res.status(400).send('email already exists');
 
-  // hash password and APIKEY
+  // hash password, create new random api_key and hash it
   const hashedPassword = await bcrypt.hash(req.body.password, 10);
   const APIKEY = crypto.randomUUID();
   const hashedAPIKEY = await bcrypt.hash(APIKEY, 10);
@@ -24,7 +23,7 @@ authRouter.post('/register', async (req, res) => {
     name: req.body.name,
     email: req.body.email,
     password: hashedPassword,
-    APIKEY: hashedAPIKEY,
+    api_key: hashedAPIKEY,
   });
   try {
     const savedUser = await user.save();
@@ -43,9 +42,6 @@ authRouter.post('/login', async (req, res) => {
 
   const validPassword = await bcrypt.compare(req.body.password, user.password);
   if (!validPassword) return res.status(400).send('Invalid password');
-
-  // const token = Jwt.sign({ _id: user._id }, process.env.TOKEN);
-  // res.header('auth-token', token).send(token);
 });
 
 export { authRouter };
