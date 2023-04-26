@@ -6,30 +6,39 @@ const carsRouter = express.Router();
 
 // REPLACE ALL by POST for credentials
 carsRouter.get('/', async (req, res) => {
-  // res.status(200).send(res.locals.user);
-  const allCars = await Car.find();
+  // console.log(res.locals.user);
+  //  /cars?sort=year_of_production (optional). Ex: sort=asc
+  if (req.query.order) {
+    req.query.order = defineSortOrder(req.query.order);
+  }
+  console.log('order:', req.query.order);
+
+  const allCars = await Car.find()
+    .sort(req.query.order ? { year_of_production: req.query.order } : {})
+    .select('-_id -__v');
   console.log(allCars.length);
-  res.send(allCars.length.toString());
+  res.send(allCars);
 });
 
 carsRouter.get('/make/:make', async (req, res) => {
-  // Accepts a make name aswell as a optional query parameter
+  // Accepts an optional query parameter
   // Ex: /make/toyota?model=supra
 
   console.log('make:', req.params.make);
   console.log('model:', req.query.model);
-  const allCars = await Car.find(
+  const carsSpecificMake = await Car.find(
     {
       make: new RegExp(`^${req.params.make}$`, 'i'),
-      ...(req.query.model ? { model: new RegExp(`^${req.query.model}$`, 'i') } : null),
+      ...(req.query.model ? { model: new RegExp(`^${req.query.model.trim()}$`, 'i') } : null),
     },
     { _id: 0, __v: 0 }
   );
-  res.send(allCars.length.toString());
+  console.log(carsSpecificMake.length);
+  res.send(carsSpecificMake);
 });
 
 carsRouter.get('/year_of_production', async (req, res) => {
-  // Search between two provided years
+  // Search between two provided years, optional sort key
   // Ex /year_of_production?year_min=1950&year_max=1960&sort=asc
   if (req.query.year_min < 1950 || isNaN(req.query.year_min)) {
     return res.status(400).send({
@@ -38,19 +47,16 @@ carsRouter.get('/year_of_production', async (req, res) => {
     });
   }
 
-  if (req.query.year_max <= req.query.year_min || isNaN(req.query.year_max)) {
-    req.query.year_max = Math.floor(req.params.year / 10 + 1) * 10;
+  if (
+    parseInt(req.query.year_max, 10) <= parseInt(req.query.year_min, 10) ||
+    isNaN(req.query.year_max)
+  ) {
+    req.query.year_max = Math.floor(req.query.year_min / 10 + 1) * 10;
   }
 
-  if (
-    (req.query.order && !['asc', 'desc'].includes(req.query.order.toLowerCase())) ||
-    req.query.order?.toLowerCase() === 'asc'
-  ) {
-    req.query.order = 1;
-  } else if (req.query.order?.toLowerCase() === 'desc') {
-    req.query.order = -1;
+  if (req.query.order) {
+    req.query.order = defineSortOrder(req.query.order);
   }
-  console.log(req.query.order);
 
   const carsSpecificYProduction = await Car.find(
     {
@@ -61,8 +67,21 @@ carsRouter.get('/year_of_production', async (req, res) => {
     },
     { _id: 0, __v: 0 }
   ).sort(req.query.order ? { year_of_production: req.query.order } : {});
+
+  console.log(carsSpecificYProduction.length);
   res.send(carsSpecificYProduction);
 });
+
+function defineSortOrder(order) {
+  if (
+    !['asc', 'desc'].includes(order.toLowerCase().trim()) ||
+    order.toLowerCase().trim() === 'asc'
+  ) {
+    return 1;
+  } else if (order.toLowerCase().trim() === 'desc') {
+    return -1;
+  }
+}
 
 carsRouter.get('/engine/:power', async (req, res) => {
   // search by hundreds : 100, 200, 300, ...
@@ -73,6 +92,11 @@ carsRouter.get('/engine/:power', async (req, res) => {
     });
   }
 
+  if (req.query.order) {
+    req.query.order = defineSortOrder(req.query.order);
+  }
+
+  console.log(req.query.order);
   console.log(req.params.power);
   console.log(Math.floor(req.params.power / 100 + 1) * 100);
   const carsSpecificPower = await Car.find(
@@ -83,29 +107,68 @@ carsRouter.get('/engine/:power', async (req, res) => {
       },
     },
     { _id: 0, __v: 0 }
-  );
+  ).sort(req.query.order ? { 'engine.maximum_power_hp': req.query.order } : {});
   console.log(carsSpecificPower.length);
   res.send(carsSpecificPower);
 });
 
-carsRouter.get('/weight/:kg', async (req, res) => {
+carsRouter.get('/min_top_speed_kmh/:speed', async (req, res) => {
+  if (req.params.speed < 0 || isNaN(req.params.speed)) {
+    return res.status(400).send({
+      error: 'Invalid number',
+      message: 'Speed in km/h must be a number greater or equal than 0',
+    });
+  }
+
+  console.log(req.params.speed);
+
+  if (req.query.order) {
+    req.query.order = defineSortOrder(req.query.order);
+  }
+
+  const carsMinTopSpeed = await Car.find(
+    {
+      top_speed_kmh: {
+        $gte: req.params.speed,
+      },
+    },
+    { _id: 0, __v: 0 }
+  ).sort(req.query.order ? { top_speed_kmh: req.query.order } : {});
+  console.log(carsMinTopSpeed.length);
+  res.send(carsMinTopSpeed);
+});
+
+carsRouter.get('/weight', async (req, res) => {
   // search gte specific Kg
-  if (req.params.kg < 0 || isNaN(req.params.kg)) {
+  if (req.query.min_weight < 0 || isNaN(req.query.min_weight)) {
     return res.status(400).send({
       error: 'Invalid number',
       message: 'Weight in kg must be a number greater or equal than 0',
     });
   }
 
-  console.log(req.params.kg);
+  if (
+    parseInt(req.query.max_weight, 10) <= parseInt(req.query.min_weight, 10) ||
+    isNaN(req.query.max_weight)
+  ) {
+    req.query.max_weight = Math.floor(req.query.min_weight / 100 + 1) * 100;
+  }
+
+  console.log(req.query.max_weight);
+
+  if (req.query.order) {
+    req.query.order = defineSortOrder(req.query.order);
+  }
+
   const carsSpecifWeight = await Car.find(
     {
       weight_kg: {
-        $gte: req.params.kg,
+        $gte: req.query.min_weight,
+        $lt: req.query.max_weight,
       },
     },
     { _id: 0, __v: 0 }
-  );
+  ).sort(req.query.order ? { weight_kg: req.query.order } : {});
   console.log(carsSpecifWeight.length);
   res.send(carsSpecifWeight);
 });
