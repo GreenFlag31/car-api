@@ -19,13 +19,4 @@ const loginValidation = (data) => {
   return schema.validate(data);
 };
 
-const credentialValidation = (data) => {
-  const schema = Joi.object({
-    clientID: Joi.string().required(),
-    APIKEY: Joi.string().required(),
-  });
-
-  return schema.validate(data);
-};
-
-export { registerValidation, loginValidation, credentialValidation };
+export { registerValidation, loginValidation };
