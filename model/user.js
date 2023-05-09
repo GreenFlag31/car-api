@@ -22,6 +22,9 @@ const userSchema = new mongoose.Schema({
   api_key: {
     type: String,
   },
+  testAccount: {
+    type: String,
+  },
   createdAt: {
     type: Date,
     default: Date.now,

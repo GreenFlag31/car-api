@@ -17,7 +17,7 @@ carsRouter.post('/', async (req, res) => {
   }
 
   const allCars = await Car.find({
-    ...(req.query.sort ? { origin: new RegExp(`^${req.query.sort.trim()}$`, 'i') } : null),
+    ...(req.query.sort ? { origin: new RegExp(`^${req.query.sort.trim()}$`, 'i') } : {}),
   })
     .sort(req.query.order ? { year_of_production: req.query.order } : {})
     .select('-_id -__v');
@@ -34,7 +34,7 @@ carsRouter.post('/make/:make', async (req, res) => {
   const carsSpecificMake = await Car.find(
     {
       make: new RegExp(`^${req.params.make}$`, 'i'),
-      ...(req.query.model ? { model: new RegExp(`^${req.query.model.trim()}$`, 'i') } : null),
+      ...(req.query.model ? { model: new RegExp(`^${req.query.model.trim()}$`, 'i') } : {}),
     },
     { _id: 0, __v: 0 }
   );
@@ -44,8 +44,8 @@ carsRouter.post('/make/:make', async (req, res) => {
 
 carsRouter.post('/year_of_production', async (req, res) => {
   const user = res.locals.user;
-  // Search between two provided years, optional sort key
-  // Ex /year_of_production?year_min=1950&year_max=1960&sort=asc
+  // Search between two provided years, optional order key
+  // Ex /year_of_production?year_min=1950&year_max=1960&order=asc
   if (req.query.year_min < 1950 || isNaN(req.query.year_min)) {
     return res.status(400).send({
       error: 'Invalid year',

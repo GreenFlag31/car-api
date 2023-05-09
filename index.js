@@ -8,7 +8,7 @@ dotenv.config();
 
 const corsOptions = {
   origin: '*',
-  methods: 'GET, POST',
+  methods: 'POST',
   preflightContinue: false,
   optionsSuccessStatus: 204,
 };

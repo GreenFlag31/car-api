@@ -3,7 +3,7 @@ import bcrypt from 'bcrypt';
 import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
 
-const LIMIT_QUERIES = 100;
+const LIMIT_QUERIES = 200;
 
 async function verifyAPIKEY(req, res, next) {
   // clientID might be of incorrect format or wrong, Mongoose crashes if incorrect format, hence following check:
@@ -11,10 +11,10 @@ async function verifyAPIKEY(req, res, next) {
     return res.status(400).send('Invalid clientID');
   }
   const user = await User.findById(req.body.clientID);
-  if (!user) return res.status(400).send('ClientID not found');
+  if (!user) return res.status(404).send('ClientID not found');
 
   const validKEY = await bcrypt.compare(req.body.api_key, user.api_key);
-  if (!validKEY) return res.status(400).send('Invalid key');
+  if (!validKEY) return res.status(401).send('Invalid key');
 
   res.locals.user = user;
   next();
@@ -51,4 +51,4 @@ async function verifyJWT(req, res, next) {
   next();
 }
 
-export { verifyAPIKEY, verifyLimit, verifyJWT };
+export { verifyAPIKEY, verifyLimit, verifyJWT, LIMIT_QUERIES };

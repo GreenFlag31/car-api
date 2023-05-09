@@ -4,10 +4,9 @@ import { registerValidation, loginValidation } from '../validation.js';
 import bcrypt from 'bcrypt';
 import crypto from 'crypto';
 import jwt from 'jsonwebtoken';
-import { verifyJWT } from './verify.js';
+import { verifyJWT, LIMIT_QUERIES } from './verify.js';
 
 const authRouter = express.Router();
-const LIMIT_QUERIES = 100;
 
 authRouter.post('/register', async (req, res) => {
   const { error } = registerValidation(req.body);
@@ -20,7 +19,6 @@ authRouter.post('/register', async (req, res) => {
   const hashedPassword = await bcrypt.hash(req.body.password, 10);
   const api_key = crypto.randomUUID();
   const hashedAPIKEY = await bcrypt.hash(api_key, 10);
-  console.log(api_key);
 
   const user = new User({
     name: req.body.name,
@@ -30,14 +28,12 @@ authRouter.post('/register', async (req, res) => {
   });
 
   try {
-    const savedUser = await user.save();
-    // const updatedUser = { ...savedUser.toObject(), api_key };
-    // res.status(201).send({ user: updatedUser });
+    await user.save();
   } catch (err) {
     res.status(500).send(err);
   }
 
-  addJWTinLocalStorage(res, user);
+  addJWTinLocalStorage(res, user, api_key);
 });
 
 authRouter.post('/login', async (req, res) => {
@@ -45,10 +41,10 @@ authRouter.post('/login', async (req, res) => {
   if (error) return res.status(400).send(error.details[0].message);
 
   const user = await User.findOne({ email: req.body.email });
-  if (!user) return res.status(400).send('Email not found');
+  if (!user) return res.status(404).send('Email not found');
 
   const validPassword = await bcrypt.compare(req.body.password, user.password);
-  if (!validPassword) return res.status(400).send('Invalid password');
+  if (!validPassword) return res.status(401).send('Invalid password');
 
   addJWTinLocalStorage(res, user);
 });
@@ -58,7 +54,7 @@ authRouter.post('/quota', verifyJWT, (req, res) => {
   const user = res.locals.user;
 
   return res.status(200).send({
-    ...(user.queries.counter >= LIMIT_QUERIES ? { error: 'Quota exhausted' } : null),
+    ...(user.queries.counter >= LIMIT_QUERIES ? { error: 'Quota exhausted' } : {}),
     quota: user.queries.counter,
   });
 });
@@ -66,6 +62,9 @@ authRouter.post('/quota', verifyJWT, (req, res) => {
 //  get new api key
 authRouter.post('/api-key/new', verifyJWT, async (req, res) => {
   const user = res.locals.user;
+
+  // Not possible to generate new key for test account
+  if (user.testAccount) return res.status(400);
 
   const api_key = crypto.randomUUID();
   const hashedAPIKEY = await bcrypt.hash(api_key, 10);
@@ -77,9 +76,13 @@ authRouter.post('/api-key/new', verifyJWT, async (req, res) => {
   });
 });
 
-function addJWTinLocalStorage(res, user) {
+function addJWTinLocalStorage(res, user, apiKeyAtRegister = '') {
   const token = jwt.sign({ id: user._id }, process.env.TOKEN, { expiresIn: '1h' });
-  res.send({ jwt: token, expiresAt: new Date(Date.now() + 1000 * 60 * 60).toLocaleString() });
+  res.send({
+    jwt: token,
+    expiresAt: new Date(Date.now() + 1000 * 60 * 60).toLocaleString(),
+    ...(apiKeyAtRegister ? { id: user._id, api_key: apiKeyAtRegister } : {}),
+  });
 }
 
 export { authRouter };
