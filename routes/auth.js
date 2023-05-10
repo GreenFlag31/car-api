@@ -33,7 +33,7 @@ authRouter.post('/register', async (req, res) => {
     res.status(500).send(err);
   }
 
-  addJWTinLocalStorage(res, user, api_key);
+  signJWTandReturnsUserData(res, user, api_key);
 });
 
 authRouter.post('/login', async (req, res) => {
@@ -46,10 +46,10 @@ authRouter.post('/login', async (req, res) => {
   const validPassword = await bcrypt.compare(req.body.password, user.password);
   if (!validPassword) return res.status(401).send('Invalid password');
 
-  addJWTinLocalStorage(res, user);
+  signJWTandReturnsUserData(res, user);
 });
 
-// checks the queries quota
+// Retrieves client ID and quota
 authRouter.post('/quota', verifyJWT, (req, res) => {
   const user = res.locals.user;
 
@@ -76,12 +76,15 @@ authRouter.post('/api-key/new', verifyJWT, async (req, res) => {
   });
 });
 
-function addJWTinLocalStorage(res, user, apiKeyAtRegister = '') {
+function signJWTandReturnsUserData(res, user, apiKeyAtRegister = '') {
   const token = jwt.sign({ id: user._id }, process.env.TOKEN, { expiresIn: '1h' });
   res.send({
+    clientID: user._id,
+    quota: user.queries.counter,
     jwt: token,
-    expiresAt: new Date(Date.now() + 1000 * 60 * 60).toLocaleString(),
-    ...(apiKeyAtRegister ? { id: user._id, api_key: apiKeyAtRegister } : {}),
+    jwtExpirationTime: new Date(Date.now() + 1000 * 60 * 60).toLocaleString(),
+    ...(user.testAccount ? { testAccount: true } : {}),
+    ...(apiKeyAtRegister ? { api_key: apiKeyAtRegister } : {}),
   });
 }
 
