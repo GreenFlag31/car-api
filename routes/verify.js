@@ -8,13 +8,15 @@ const LIMIT_QUERIES = 200;
 async function verifyAPIKEY(req, res, next) {
   // clientID might be of incorrect format or wrong, Mongoose crashes if incorrect format, hence following check:
   if (!mongoose.isValidObjectId(req.body.clientID)) {
-    return res.status(400).send('Invalid clientID');
+    return res.status(400).send({ error: 'Error on client side', message: 'Invalid clientID' });
   }
   const user = await User.findById(req.body.clientID);
-  if (!user) return res.status(404).send('ClientID not found');
+  if (!user)
+    return res.status(404).send({ error: 'Error on client side', message: 'ClientID not found' });
 
   const validKEY = await bcrypt.compare(req.body.api_key, user.api_key);
-  if (!validKEY) return res.status(401).send('Invalid key');
+  if (!validKEY)
+    return res.status(401).send({ error: 'Error on client side', message: 'Invalid key' });
 
   res.locals.user = user;
   next();

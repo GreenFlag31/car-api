@@ -5,15 +5,19 @@ import bcrypt from 'bcrypt';
 import crypto from 'crypto';
 import jwt from 'jsonwebtoken';
 import { verifyJWT, LIMIT_QUERIES } from './verify.js';
+// import cors from 'cors';
 
 const authRouter = express.Router();
+// authRouter.use(cors({
+//   origin: 'http://mondomaine.com'
+// }));
 
 authRouter.post('/register', async (req, res) => {
   const { error } = registerValidation(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
+  if (error) return res.status(400).send({ error: error.details[0].message });
 
   const emailExist = await User.findOne({ email: req.body.email });
-  if (emailExist) return res.status(400).send('Email already exists');
+  if (emailExist) return res.status(400).send({ error: 'Email already exists' });
 
   // hash password, create new random api_key and hash it
   const hashedPassword = await bcrypt.hash(req.body.password, 10);
@@ -41,15 +45,15 @@ authRouter.post('/login', async (req, res) => {
   if (error) return res.status(400).send(error.details[0].message);
 
   const user = await User.findOne({ email: req.body.email });
-  if (!user) return res.status(404).send('Email not found');
+  if (!user) return res.status(404).send({ error: 'Email not found' });
 
   const validPassword = await bcrypt.compare(req.body.password, user.password);
-  if (!validPassword) return res.status(401).send('Invalid password');
+  if (!validPassword) return res.status(401).send({ error: 'Invalid password' });
 
   signJWTandReturnsUserData(res, user);
 });
 
-// Retrieves client ID and quota
+// Retrieves and quota
 authRouter.post('/quota', verifyJWT, (req, res) => {
   const user = res.locals.user;
 
@@ -76,13 +80,24 @@ authRouter.post('/api-key/new', verifyJWT, async (req, res) => {
   });
 });
 
+// refresh jwt
+authRouter.post('/jwt/refresh', verifyJWT, (req, res) => {
+  const user = res.locals.user;
+
+  const newJwt = jwt.sign({ id: user._id }, process.env.TOKEN, { expiresIn: '1h' });
+
+  return res.status(200).send({
+    jwt: newJwt,
+  });
+});
+
 function signJWTandReturnsUserData(res, user, apiKeyAtRegister = '') {
   const token = jwt.sign({ id: user._id }, process.env.TOKEN, { expiresIn: '1h' });
   res.send({
     clientID: user._id,
     quota: user.queries.counter,
     jwt: token,
-    jwtExpirationTime: new Date(Date.now() + 1000 * 60 * 60).toLocaleString(),
+    start: user.queries.dateNow,
     ...(user.testAccount ? { testAccount: true } : {}),
     ...(apiKeyAtRegister ? { api_key: apiKeyAtRegister } : {}),
   });

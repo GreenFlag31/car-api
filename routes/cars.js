@@ -2,9 +2,12 @@ import express from 'express';
 import { verifyAPIKEY, verifyLimit } from './verify.js';
 import { updateCounterAndDateStatus } from './updateData.js';
 import { Car } from '../model/cars.js';
+import apicache from 'apicache';
 
+const cache = apicache.middleware;
 const carsRouter = express.Router();
 carsRouter.use(verifyAPIKEY, verifyLimit);
+coffeeRouter.use(cache('24 hours'));
 
 carsRouter.post('/', async (req, res) => {
   //  /cars?sort=origin (optional). Ex: sort=USA
