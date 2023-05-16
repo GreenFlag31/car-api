@@ -5,12 +5,14 @@ import bcrypt from 'bcrypt';
 import crypto from 'crypto';
 import jwt from 'jsonwebtoken';
 import { verifyJWT, LIMIT_QUERIES } from './verify.js';
-// import cors from 'cors';
+import cors from 'cors';
 
 const authRouter = express.Router();
-// authRouter.use(cors({
-//   origin: 'http://mondomaine.com'
-// }));
+authRouter.use(
+  cors({
+    origin: 'https://historicalcars-api.com',
+  })
+);
 
 authRouter.post('/register', async (req, res) => {
   const { error } = registerValidation(req.body);
