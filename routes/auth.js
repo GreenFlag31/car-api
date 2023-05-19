@@ -89,7 +89,7 @@ authRouter.post('/jwt/refresh', verifyJWT, (req, res) => {
   const newJwt = jwt.sign({ id: user._id }, process.env.TOKEN, { expiresIn: '1h' });
 
   return res.status(200).send({
-    jwt: newJwt,
+    new_jwt: newJwt,
   });
 });
 
