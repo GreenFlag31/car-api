@@ -1,6 +1,6 @@
 import { User } from '../model/user.js';
 
-async function updateCounterAndDateStatus(user) {
+async function updateCounterAndDateStatus(user, login = false) {
   const dateInDataBase = user.queries.dateNow;
   let addingOneMonthTodateInDataBase = dateInDataBase.setMonth(dateInDataBase.getMonth() + 1);
 
@@ -25,7 +25,7 @@ async function updateCounterAndDateStatus(user) {
 
     await User.updateOne(
       { _id: user._id },
-      { $set: { 'queries.dateNow': dateToIsoString, 'queries.counter': 1 } }
+      { $set: { 'queries.dateNow': dateToIsoString, 'queries.counter': login ? 0 : 1 } }
     );
   }
 }

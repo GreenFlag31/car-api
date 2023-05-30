@@ -1,6 +1,7 @@
 import express from 'express';
 import { User } from '../model/user.js';
 import { registerValidation, loginValidation } from '../validation.js';
+import { updateCounterAndDateStatus } from './updateData.js';
 import bcrypt from 'bcrypt';
 import crypto from 'crypto';
 import jwt from 'jsonwebtoken';
@@ -46,12 +47,14 @@ authRouter.post('/login', async (req, res) => {
   const { error } = loginValidation(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-  const user = await User.findOne({ email: req.body.email });
+  let user = await User.findOne({ email: req.body.email });
   if (!user) return res.status(404).send({ error: 'Email not found' });
 
   const validPassword = await bcrypt.compare(req.body.password, user.password);
   if (!validPassword) return res.status(401).send({ error: 'Invalid password' });
 
+  await updateCounterAndDateStatus(user, true);
+  user = await User.findOne({ email: req.body.email });
   signJWTandReturnsUserData(res, user);
 });
 
